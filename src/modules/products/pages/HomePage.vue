@@ -1,6 +1,7 @@
 <template>
-  
-
+  <p>{{ $t('message') }}</p>
+  <p>{{ $t('greeting', { name: 'Leo' }) }}</p>
+  <p>{{ $t('labels.product', 2) }}</p>
   <CardGrid :items="products" />
 </template>
 
