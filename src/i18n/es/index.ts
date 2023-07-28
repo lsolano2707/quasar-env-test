@@ -15,5 +15,7 @@ export default {
     save: 'Guardar',
     edit: 'Edit',
     cancel: 'Cancelar',
+    products: 'Productos',
+    categories: 'Categorias',
   },
 };

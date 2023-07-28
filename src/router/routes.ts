@@ -7,16 +7,21 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '',
+        name: 'home',
+        component: () => import('src/pages/IndexPage.vue'),
+      },
+      {
+        path: 'products',
         name: 'products-home',
         component: () => import('src/modules/products/pages/HomePage.vue'),
       },
       {
-        path: ':productId',
+        path: 'products/:productId',
         name: 'products-detail',
         component: () => import('src/modules/products/pages/DetailPage.vue'),
       },
       {
-        path: 'create',
+        path: 'products/create',
         name: 'products-create',
         meta: {
           isCreate: true,
@@ -27,7 +32,7 @@ const routes: RouteRecordRaw[] = [
           ),
       },
       {
-        path: ':productId/edit',
+        path: 'products/:productId/edit',
         name: 'products-edit',
         meta: {
           isUpdate: true,
