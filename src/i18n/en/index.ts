@@ -7,4 +7,8 @@ export default {
     price: 'Price',
     description: 'Description',
   },
+  messages: {
+    formError: 'The form contains errors',
+    formSuccess: 'Record added successfully',
+  },
 };

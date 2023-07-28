@@ -7,4 +7,8 @@ export default {
     price: 'Precio',
     description: 'Descripcion',
   },
+  messages: {
+    formError: 'El formulario contiene errores',
+    formSuccess: 'Registro agregado exitosamente',
+  },
 };
