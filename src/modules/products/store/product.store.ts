@@ -5,7 +5,7 @@ import { defineStore } from 'pinia';
 import * as productService from '../service/product.service';
 
 // Types
-import { Product } from '../types/product.type';
+import { CreateProductDTO, Product } from '../types/product.type';
 
 interface State {
   isLoading: boolean;
@@ -54,7 +54,7 @@ export const useProductStore = defineStore('products', () => {
     }
   }
 
-  async function create(data: Product) {
+  async function create(data: CreateProductDTO) {
     try {
       state.isLoading = true;
       const result = await productService.create(data);

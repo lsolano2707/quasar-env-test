@@ -7,12 +7,24 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '',
+        name: 'products-home',
         component: () => import('src/modules/products/pages/HomePage.vue'),
       },
       {
         path: ':productId',
         name: 'products-detail',
         component: () => import('src/modules/products/pages/DetailPage.vue'),
+      },
+      {
+        path: 'create',
+        name: 'products-create',
+        meta: {
+          isCreate: true,
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "Create" */ 'src/modules/products/pages/CreateOrEditPage.vue'
+          ),
       },
     ],
   },

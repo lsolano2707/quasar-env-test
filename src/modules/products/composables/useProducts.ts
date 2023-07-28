@@ -1,10 +1,14 @@
 import { computed } from 'vue';
+import { useRouter } from 'vue-router';
 
 // Store
 import { useProductStore } from '../store/product.store';
-import { Product } from '../types/product.type';
+
+// Types
+import { CreateProductDTO, Product } from '../types/product.type';
 
 export const useProduct = () => {
+  const router = useRouter();
   const productStore = useProductStore();
 
   const isLoading = computed<boolean>(() => productStore.state.isLoading);
@@ -22,7 +26,7 @@ export const useProduct = () => {
     return productStore.fetchAll();
   }
 
-  async function createProduct(data: Product) {
+  async function createProduct(data: CreateProductDTO) {
     if (!data) return;
     await productStore.create(data);
   }
@@ -33,6 +37,34 @@ export const useProduct = () => {
 
   async function deleteProductById(id: number) {
     await productStore.deleteById(id);
+  }
+  // #endregion
+
+  // #region - Redirects
+  function goToHomePage() {
+    router.push({
+      name: 'products-home',
+    });
+  }
+
+  function goToDetailPage(id: string) {
+    router.push({
+      name: 'products-detail',
+      params: { albumId: id },
+    });
+  }
+
+  function goToCreatePage() {
+    router.push({
+      name: 'products-create',
+    });
+  }
+
+  function goToEditPage(id: string) {
+    router.push({
+      name: 'products-edit',
+      params: { albumId: id },
+    });
   }
   // #endregion
 
@@ -48,5 +80,11 @@ export const useProduct = () => {
     createProduct,
     updateProduct,
     deleteProductById,
+
+    // Redirects
+    goToHomePage,
+    goToDetailPage,
+    goToCreatePage,
+    goToEditPage,
   };
 };

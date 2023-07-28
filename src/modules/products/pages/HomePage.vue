@@ -2,6 +2,12 @@
   <p>{{ $t('message') }}</p>
   <p>{{ $t('greeting', { name: 'Leo' }) }}</p>
   <p>{{ $t('labels.product', 2) }}</p>
+  <div class="row justify-end">
+    <div class="col-auto">
+      <q-btn rounded color="primary" icon="add" @click="goToCreatePage" />
+    </div>
+  </div>
+
   <CardGrid :items="products" />
 </template>
 
@@ -15,7 +21,7 @@ import CardGrid from '../components/CardGrid.vue';
 import { useProduct } from '../composables/useProducts';
 
 // Variables
-const { products, fetchProducts } = useProduct();
+const { products, fetchProducts, goToCreatePage } = useProduct();
 
 // Lifecycle
 onMounted(() => {
