@@ -26,6 +26,17 @@ const routes: RouteRecordRaw[] = [
             /* webpackChunkName: "Create" */ 'src/modules/products/pages/CreateOrEditPage.vue'
           ),
       },
+      {
+        path: ':productId/edit',
+        name: 'products-edit',
+        meta: {
+          isUpdate: true,
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "Edit" */ 'src/modules/products/pages/CreateOrEditPage.vue'
+          ),
+      },
     ],
   },
 

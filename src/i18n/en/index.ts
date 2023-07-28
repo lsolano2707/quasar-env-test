@@ -11,4 +11,9 @@ export default {
     formError: 'The form contains errors',
     formSuccess: 'Record added successfully',
   },
+  buttons: {
+    save: 'Save',
+    edit: 'Edit',
+    cancel: 'Cancel',
+  },
 };

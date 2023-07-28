@@ -57,8 +57,16 @@
     </div>
 
     <div class="row">
+      <div class="col-auto q-mr-sm">
+        <q-btn rounded @click="goToHomePage" :label="$t('buttons.cancel')" />
+      </div>
       <div class="col-auto">
-        <q-btn rounded color="primary" icon="add" @click="save" />
+        <q-btn
+          rounded
+          color="primary"
+          @click="save"
+          :label="$t('buttons.save')"
+        />
       </div>
     </div>
     <br />
@@ -68,7 +76,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive } from 'vue';
+import { computed, reactive, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 
 // Composables
 import { useForm } from 'src/modules/common/composables/useForm';
@@ -77,14 +86,17 @@ import { useProduct } from '../composables/useProducts';
 import { useQuasar } from 'quasar';
 
 // Types
-import { CreateProductDTO } from '../types/product.type';
+import { CreateProductDTO, Product } from '../types/product.type';
 
 // Variables
+const route = useRoute();
 const { t } = useI18n();
 const { getValidator, required, maxLength, minValue, getErrorMessage } =
   useForm();
-const { createProduct, goToHomePage } = useProduct();
+const { createProduct, goToHomePage, fetchProductById } = useProduct();
 const $q = useQuasar();
+const isUpdate = computed<boolean>(() => route.meta.isUpdate as boolean);
+const productId = computed(() => Number(route.params.productId as string));
 
 const form = reactive<CreateProductDTO>({
   title: '',
@@ -102,6 +114,21 @@ const rules = computed(() => ({
 
 // Cruza el cumplimiento de las reglas en el formulario
 const v$ = getValidator(rules, form);
+
+// Lifecycles
+onMounted(() => {
+  if (isUpdate.value) {
+    fetchProductById(productId.value).then((value: Product | undefined) => {
+      if (value) {
+        form.title = value.title;
+        form.price = value.price;
+        form.description = value.description;
+        form.categoryId = value.category.id;
+        form.images = value.images;
+      }
+    });
+  }
+});
 
 // Functions
 async function save() {

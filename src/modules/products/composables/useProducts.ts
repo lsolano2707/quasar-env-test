@@ -47,10 +47,10 @@ export const useProduct = () => {
     });
   }
 
-  function goToDetailPage(id: string) {
+  function goToDetailPage(id: number) {
     router.push({
       name: 'products-detail',
-      params: { albumId: id },
+      params: { productId: id },
     });
   }
 
@@ -60,10 +60,10 @@ export const useProduct = () => {
     });
   }
 
-  function goToEditPage(id: string) {
+  function goToEditPage(id: number) {
     router.push({
       name: 'products-edit',
-      params: { albumId: id },
+      params: { productId: id },
     });
   }
   // #endregion

@@ -46,6 +46,7 @@ export const useProductStore = defineStore('products', () => {
         result = await productService.getById(id);
         state.product = result;
       }
+      return result;
     } catch (error) {
       console.error(error);
       throw error;

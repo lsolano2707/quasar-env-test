@@ -11,4 +11,9 @@ export default {
     formError: 'El formulario contiene errores',
     formSuccess: 'Registro agregado exitosamente',
   },
+  buttons: {
+    save: 'Guardar',
+    edit: 'Edit',
+    cancel: 'Cancelar',
+  },
 };

@@ -4,6 +4,16 @@
       <h4>Detail page</h4>
       {{ product }}
     </div>
+    <div class="row">
+      <div class="col-auto">
+        <q-btn
+          rounded
+          color="primary"
+          @click="goToEditPage(productId)"
+          :label="$t('buttons.edit')"
+        />
+      </div>
+    </div>
   </q-page>
 </template>
 
@@ -17,7 +27,7 @@ import { useProduct } from '../composables/useProducts';
 // Variables
 const route = useRoute();
 
-const { fetchProductById, product } = useProduct();
+const { fetchProductById, product, goToEditPage } = useProduct();
 const productId = computed(() => Number(route.params.productId as string));
 
 // Lifecycle
