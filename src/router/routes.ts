@@ -42,6 +42,39 @@ const routes: RouteRecordRaw[] = [
             /* webpackChunkName: "Edit" */ 'src/modules/products/pages/CreateOrEditPage.vue'
           ),
       },
+      // Category
+      {
+        path: 'categories',
+        name: 'categories-home',
+        component: () => import('src/modules/categories/pages/HomePage.vue'),
+      },
+      {
+        path: 'categories/:categoryId',
+        name: 'categories-detail',
+        component: () => import('src/modules/categories/pages/DetailPage.vue'),
+      },
+      {
+        path: 'categories/create',
+        name: 'categories-create',
+        meta: {
+          isCreate: true,
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "Create" */ 'src/modules/categories/pages/CreatePage.vue'
+          ),
+      },
+      {
+        path: 'categories/:categoryId/edit',
+        name: 'categories-edit',
+        meta: {
+          isUpdate: true,
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "Edit" */ 'src/modules/categories/pages/EditPage.vue'
+          ),
+      },
     ],
   },
 

@@ -3,9 +3,13 @@ export default {
   greeting: 'Hola {name}',
   labels: {
     product: 'Producto | Productos',
+    categories: 'Categoría | Categorías',
     title: 'Título',
     price: 'Precio',
     description: 'Descripcion',
+    id: 'Id',
+    name: 'Nombre',
+    image: 'Imagen',
   },
   messages: {
     formError: 'El formulario contiene errores',

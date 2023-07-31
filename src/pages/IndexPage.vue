@@ -12,7 +12,7 @@
       <q-btn
         color="primary"
         rounded
-        @click="goToProductsPage"
+        @click="goToCategoryPage"
         :label="$t('buttons.categories')"
       />
     </div>
@@ -22,7 +22,9 @@
 <script setup lang="ts">
 // Composables
 import { useProduct } from 'src/modules/products/composables/useProducts';
+import { useCategories } from 'src/modules/categories/composables/useCategories';
 
 // Variables
 const { goToHomePage: goToProductsPage } = useProduct();
+const { goToHomePage: goToCategoryPage } = useCategories();
 </script>

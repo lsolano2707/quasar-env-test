@@ -38,8 +38,4 @@
 defineProps({
   item: { type: Object, required: true },
 });
-
-function addToCart() {
-  // agregar funcionalidad
-}
 </script>
