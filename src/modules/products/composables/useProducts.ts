@@ -5,7 +5,11 @@ import { useRouter } from 'vue-router';
 import { useProductStore } from '../store/product.store';
 
 // Types
-import { CreateProductDTO, Product } from '../types/product.type';
+import {
+  CreateProductDTO,
+  Product,
+  UpdateProductDTO,
+} from '../types/product.type';
 
 export const useProduct = () => {
   const router = useRouter();
@@ -31,7 +35,7 @@ export const useProduct = () => {
     await productStore.create(data);
   }
 
-  async function updateProduct(id: number, data: Product) {
+  async function updateProduct(id: number, data: UpdateProductDTO) {
     await productStore.updateById(id, data);
   }
 

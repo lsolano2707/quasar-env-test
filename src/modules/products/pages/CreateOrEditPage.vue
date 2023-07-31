@@ -9,7 +9,7 @@
           outlined
           dense
           counter
-          maxlength="10"
+          maxlength="50"
           required
           bottom-slots
           :error-message="getErrorMessage(v$.title?.$errors)"
@@ -37,7 +37,7 @@
       <!-- /Price -->
 
       <!-- Description -->
-      <div class="col-12 q-py-md q-px-md">
+      <div v-if="!isUpdate" class="col-12 q-py-md q-px-md">
         <q-input
           type="textarea"
           v-model="form.description"
@@ -45,7 +45,6 @@
           outlined
           autogrow
           counter
-          maxlength="50"
           required
           bottom-slots
           :error-message="getErrorMessage(v$.description?.$errors)"
@@ -86,14 +85,19 @@ import { useProduct } from '../composables/useProducts';
 import { useQuasar } from 'quasar';
 
 // Types
-import { CreateProductDTO, Product } from '../types/product.type';
+import {
+  CreateProductDTO,
+  Product,
+  UpdateProductDTO,
+} from '../types/product.type';
 
 // Variables
 const route = useRoute();
 const { t } = useI18n();
 const { getValidator, required, maxLength, minValue, getErrorMessage } =
   useForm();
-const { createProduct, goToHomePage, fetchProductById } = useProduct();
+const { createProduct, goToHomePage, fetchProductById, updateProduct } =
+  useProduct();
 const $q = useQuasar();
 const isUpdate = computed<boolean>(() => route.meta.isUpdate as boolean);
 const productId = computed(() => Number(route.params.productId as string));
@@ -107,9 +111,8 @@ const form = reactive<CreateProductDTO>({
 });
 
 const rules = computed(() => ({
-  title: { required, maxLength: maxLength(10) },
+  title: { required, maxLength: maxLength(50) },
   price: { required, minValue: minValue(1) },
-  description: { required, maxLength: maxLength(50) },
 }));
 
 // Cruza el cumplimiento de las reglas en el formulario
@@ -133,6 +136,8 @@ onMounted(() => {
 // Functions
 async function save() {
   const isValid = await v$.value.$validate();
+  console.log(v$.value);
+
   if (!isValid) {
     $q.notify({
       message: t('messages.formError'),
@@ -141,12 +146,21 @@ async function save() {
     });
     return;
   }
-  createProduct(form);
-  $q.notify({
-    message: t('messages.formSuccess'),
-    type: 'positive',
-    position: 'top-right',
-  });
+  if (isUpdate.value) {
+    updateProduct(productId.value, form as UpdateProductDTO);
+    $q.notify({
+      message: t('messages.updateSuccess'),
+      type: 'positive',
+      position: 'top-right',
+    });
+  } else {
+    createProduct(form);
+    $q.notify({
+      message: t('messages.addSuccess'),
+      type: 'positive',
+      position: 'top-right',
+    });
+  }
   goToHomePage();
 }
 </script>

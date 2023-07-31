@@ -1,10 +1,11 @@
 <template>
   <div v-if="items.length" class="row justify-center">
     <div
-      class="col-12 col-sm-6 col-md-3 q-px-sm q-mb-md"
       v-for="item in items"
       :key="item.id"
+      class="col-12 col-sm-6 col-md-3 q-px-sm q-mb-md"
     >
+      <q-btn icon="delete" @click="remove(item.id)" />
       <!-- {{ item }} -->
       <router-link
         :to="{
@@ -30,4 +31,10 @@ import { Product } from '../types/product.type';
 defineProps({
   items: { type: Array as PropType<Product[]>, required: true },
 });
+
+const emit = defineEmits(['on:remove']);
+
+const remove = (id: number) => {
+  emit('on:remove', id);
+};
 </script>

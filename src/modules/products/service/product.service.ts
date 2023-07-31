@@ -1,6 +1,10 @@
 import { api } from 'src/boot/axios';
 // Types
-import { CreateProductDTO, Product } from '../types/product.type';
+import {
+  CreateProductDTO,
+  Product,
+  UpdateProductDTO,
+} from '../types/product.type';
 
 export const getAll = async (): Promise<Product[]> => {
   const { data: result } = await api.get(
@@ -24,7 +28,7 @@ export const create = async (data: CreateProductDTO) => {
   return result;
 };
 
-export const updateById = async (id: number, data: Product) => {
+export const updateById = async (id: number, data: UpdateProductDTO) => {
   const { data: result } = await api.put(
     `https://api.escuelajs.co/api/v1/products/${id}`,
     data

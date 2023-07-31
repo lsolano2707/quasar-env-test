@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <CardGrid :items="products" />
+  <CardGrid :items="products" @on:remove="deleteProductById" />
 </template>
 
 <script setup lang="ts">
@@ -21,7 +21,8 @@ import CardGrid from '../components/CardGrid.vue';
 import { useProduct } from '../composables/useProducts';
 
 // Variables
-const { products, fetchProducts, goToCreatePage } = useProduct();
+const { products, fetchProducts, goToCreatePage, deleteProductById } =
+  useProduct();
 
 // Lifecycle
 onMounted(() => {

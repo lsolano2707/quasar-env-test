@@ -5,7 +5,11 @@ import { defineStore } from 'pinia';
 import * as productService from '../service/product.service';
 
 // Types
-import { CreateProductDTO, Product } from '../types/product.type';
+import {
+  CreateProductDTO,
+  Product,
+  UpdateProductDTO,
+} from '../types/product.type';
 
 interface State {
   isLoading: boolean;
@@ -69,7 +73,7 @@ export const useProductStore = defineStore('products', () => {
     }
   }
 
-  async function updateById(id: number, data: Product) {
+  async function updateById(id: number, data: UpdateProductDTO) {
     try {
       state.isLoading = true;
       const result = await productService.updateById(id, data);
