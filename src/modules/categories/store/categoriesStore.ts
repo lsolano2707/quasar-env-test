@@ -5,7 +5,11 @@ import { defineStore } from 'pinia';
 import * as categoryService from '../service/category.service';
 
 // Types
-import { Category, CreateCategoryDTO } from '../types/category.type';
+import {
+  Category,
+  CreateCategoryDTO,
+  UpdateCategoryDTO,
+} from '../types/category.type';
 
 interface State {
   isLoading: boolean;
@@ -70,7 +74,7 @@ export const useCategoryStore = defineStore('categories', () => {
     }
   }
 
-  async function updateById(id: number, data: Category) {
+  async function updateById(id: number, data: UpdateCategoryDTO) {
     try {
       state.isLoading = true;
       const result = await categoryService.updateById(id, data);

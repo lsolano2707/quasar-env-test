@@ -3,18 +3,12 @@
   <div class="row">
     <div class="col-12 q-my-md">
       <q-card class="full-height" flat bordered>
-        <!-- <img :src="item.image" :alt="item.category.image" /> -->
+        <img :src="item.image" :alt="item.image" />
         <q-card-section-compact>
-          <div class="text-subtitle1 text-center">
-            {{ item.id }}
-          </div>
+          <div class="text-caption text-grey"></div>
 
           <div class="text-caption text-grey">
             <p>{{ item.name }}</p>
-          </div>
-
-          <div class="text-caption text-grey">
-            <p>{{ item.image }}</p>
           </div>
         </q-card-section-compact>
       </q-card>
@@ -23,7 +17,10 @@
 </template>
 
 <script setup lang="ts">
+import { PropType } from 'vue';
+import { Category } from '../types/category.type';
+
 defineProps({
-  item: { type: Object, required: true },
+  item: { type: Object as PropType<Category>, required: true },
 });
 </script>

@@ -13,7 +13,8 @@ export default {
   },
   messages: {
     formError: 'The form contains errors',
-    formSuccess: 'Record added successfully',
+    addSuccess: 'Record added successfully',
+    updateSuccess: 'Record updated successfully',
   },
   buttons: {
     save: 'Save',

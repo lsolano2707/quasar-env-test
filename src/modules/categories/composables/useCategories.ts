@@ -5,7 +5,11 @@ import { useRouter } from 'vue-router';
 import { useCategoryStore } from 'src/modules/categories/store/categoriesStore';
 
 // Types
-import { Category, CreateCategoryDTO } from '../types/category.type';
+import {
+  Category,
+  CreateCategoryDTO,
+  UpdateCategoryDTO,
+} from '../types/category.type';
 
 export const useCategories = () => {
   const router = useRouter();
@@ -34,11 +38,11 @@ export const useCategories = () => {
     await categoriesStore.create(data);
   }
 
-  async function updateProduct(id: number, data: Category) {
+  async function updateCategory(id: number, data: UpdateCategoryDTO) {
     await categoriesStore.updateById(id, data);
   }
 
-  async function deleteProductById(id: number) {
+  async function deleteCategoryById(id: number) {
     await categoriesStore.deleteById(id);
   }
   // #endregion
@@ -81,8 +85,8 @@ export const useCategories = () => {
     fetchCategories,
     fetchCategoryById,
     createCategory,
-    updateProduct,
-    deleteProductById,
+    updateCategory,
+    deleteCategoryById,
 
     // Redirects
     goToHomePage,

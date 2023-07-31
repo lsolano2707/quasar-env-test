@@ -1,6 +1,10 @@
 import { api } from 'src/boot/axios';
 // Types
-import { Category, CreateCategoryDTO } from '../types/category.type';
+import {
+  Category,
+  CreateCategoryDTO,
+  UpdateCategoryDTO,
+} from '../types/category.type';
 
 export const getAll = async (): Promise<Category[]> => {
   const { data: result } = await api.get(
@@ -24,7 +28,7 @@ export const create = async (data: CreateCategoryDTO) => {
   return result;
 };
 
-export const updateById = async (id: number, data: Category) => {
+export const updateById = async (id: number, data: UpdateCategoryDTO) => {
   const { data: result } = await api.put(
     `https://api.escuelajs.co/api/v1/categories/${id}`,
     data

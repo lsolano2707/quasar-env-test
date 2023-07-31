@@ -13,7 +13,8 @@ export default {
   },
   messages: {
     formError: 'El formulario contiene errores',
-    formSuccess: 'Registro agregado exitosamente',
+    addSuccess: 'Registro agregado exitosamente',
+    updateSuccess: 'Registro actualizado exitosamente',
   },
   buttons: {
     save: 'Guardar',

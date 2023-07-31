@@ -4,9 +4,5 @@ export interface Category {
   image: string;
 }
 //Customizar: (cuando necesito alguna propiedad especifica del objeto).
-export interface CreateCategoryDTO
-  extends Required<Pick<Category, 'id' | 'name' | 'image'>> {
-  categoryName: string;
-  categoryImage: string[];
-}
+export type CreateCategoryDTO = Required<Pick<Category, 'name' | 'image'>>;
 export type UpdateCategoryDTO = Partial<CreateCategoryDTO>;

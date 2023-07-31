@@ -61,7 +61,7 @@ const routes: RouteRecordRaw[] = [
         },
         component: () =>
           import(
-            /* webpackChunkName: "Create" */ 'src/modules/categories/pages/CreatePage.vue'
+            /* webpackChunkName: "Create" */ 'src/modules/categories/pages/CreateOrEditPage.vue'
           ),
       },
       {
@@ -72,7 +72,7 @@ const routes: RouteRecordRaw[] = [
         },
         component: () =>
           import(
-            /* webpackChunkName: "Edit" */ 'src/modules/categories/pages/EditPage.vue'
+            /* webpackChunkName: "Edit" */ 'src/modules/categories/pages/CreateOrEditPage.vue'
           ),
       },
     ],

@@ -35,7 +35,10 @@
 </template>
 
 <script setup lang="ts">
+import { PropType } from 'vue';
+import { Product } from '../types/product.type';
+
 defineProps({
-  item: { type: Object, required: true },
+  item: { type: Object as PropType<Product>, required: true },
 });
 </script>
