@@ -16,15 +16,22 @@
         :label="$t('buttons.categories')"
       />
     </div>
+    environment: {{ environment }}
   </q-page>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+
 // Composables
 import { useProduct } from 'src/modules/products/composables/useProducts';
 import { useCategories } from 'src/modules/categories/composables/useCategories';
 
+// Constants
+import { ENVIRONMENT } from 'src/modules/common/constants/env.constant';
+
 // Variables
 const { goToHomePage: goToProductsPage } = useProduct();
 const { goToHomePage: goToCategoryPage } = useCategories();
+const environment = ref(ENVIRONMENT);
 </script>
