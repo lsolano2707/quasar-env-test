@@ -1,42 +1,37 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+    <div class="col-auto q-mr-sm">
+      <q-btn
+        color="primary"
+        rounded
+        @click="goToProductsPage"
+        :label="$t('buttons.products')"
+      />
+    </div>
+    <div class="col-auto q-mr-sm">
+      <q-btn
+        color="primary"
+        rounded
+        @click="goToCategoryPage"
+        :label="$t('buttons.categories')"
+      />
+    </div>
+    environment: {{ environment }}
   </q-page>
 </template>
 
 <script setup lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
 import { ref } from 'vue';
 
-const todos = ref<Todo[]>([
-  {
-    id: 1,
-    content: 'ct1'
-  },
-  {
-    id: 2,
-    content: 'ct2'
-  },
-  {
-    id: 3,
-    content: 'ct3'
-  },
-  {
-    id: 4,
-    content: 'ct4'
-  },
-  {
-    id: 5,
-    content: 'ct5'
-  }
-]);
-const meta = ref<Meta>({
-  totalCount: 1200
-});
+// Composables
+import { useProduct } from 'src/modules/products/composables/useProducts';
+import { useCategories } from 'src/modules/categories/composables/useCategories';
+
+// Constants
+import { ENVIRONMENT } from 'src/modules/common/constants/env.constant';
+
+// Variables
+const { goToHomePage: goToProductsPage } = useProduct();
+const { goToHomePage: goToCategoryPage } = useCategories();
+const environment = ref(ENVIRONMENT);
 </script>
