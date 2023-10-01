@@ -43,5 +43,6 @@ const environment2 = ref(process.env.ENVIRONMENT);
 
 onMounted(() => {
   console.log('ENVIRONMENT', process.env.ENVIRONMENT);
+  console.log('API_URL', process.env.API_URL);
 });
 </script>
