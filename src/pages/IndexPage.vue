@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 // Composables
 import { useProduct } from 'src/modules/products/composables/useProducts';
