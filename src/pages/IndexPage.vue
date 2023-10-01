@@ -40,4 +40,9 @@ const { goToHomePage: goToProductsPage } = useProduct();
 const { goToHomePage: goToCategoryPage } = useCategories();
 const environment = ref(ENVIRONMENT);
 const environment2 = ref(process.env.ENVIRONMENT);
+
+onMounted(() => {
+  console.log('ENVIRONMENT', process.env.ENVIRONMENT);
+
+}),
 </script>
