@@ -16,7 +16,7 @@
         :label="$t('buttons.categories')"
       />
     </div>
-    environment: {{ environment }}
+    environment:: {{ environment }}
   </q-page>
 </template>
 
