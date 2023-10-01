@@ -1,6 +1,7 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <div class="col-auto q-mr-sm">
+    <h1>ENV TEST - QUASAR</h1>
+    <!-- <div class="col-auto q-mr-sm">
       <q-btn
         color="primary"
         rounded
@@ -15,8 +16,10 @@
         @click="goToCategoryPage"
         :label="$t('buttons.categories')"
       />
-    </div>
-    environment:: {{ environment }}
+    </div> -->
+    environment:: {{ process.env.ENVIRONMENT }}
+    <br>
+    environment 2:: {{ environment }}
   </q-page>
 </template>
 
