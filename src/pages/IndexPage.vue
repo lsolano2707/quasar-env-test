@@ -17,9 +17,11 @@
         :label="$t('buttons.categories')"
       />
     </div> -->
-    environment:: {{ process.env.ENVIRONMENT }}
+    <!-- environment:: {{ process.env.ENVIRONMENT }} -->
     <br>
-    environment 2:: {{ environment }}
+    environment 1:: {{ environment }}
+    <br>
+    environment 2:: {{ environment2 }}
   </q-page>
 </template>
 
@@ -37,4 +39,5 @@ import { ENVIRONMENT } from 'src/modules/common/constants/env.constant';
 const { goToHomePage: goToProductsPage } = useProduct();
 const { goToHomePage: goToCategoryPage } = useCategories();
 const environment = ref(ENVIRONMENT);
+const environment2 = ref(process.env.ENVIRONMENT);
 </script>
