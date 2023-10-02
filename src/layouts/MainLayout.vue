@@ -5,6 +5,7 @@
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
         <q-toolbar-title>
           <router-link to="/">
+            <q-icon name="img:/images/logo.svg" size="100px" />
             <q-icon name="img:/src/assets/images/logo.svg" size="100px" />
           </router-link>
         </q-toolbar-title>
