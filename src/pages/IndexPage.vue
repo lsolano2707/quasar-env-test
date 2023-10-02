@@ -8,9 +8,9 @@
 import { onMounted } from 'vue';
 
 onMounted(() => {
-  console.log('ENVs', process.env);
   console.log('VITE_ENVIRONMENT', process.env.VITE_ENVIRONMENT);
   console.log('ENVIRONMENT', process.env.ENVIRONMENT);
   console.log('API_URL', process.env.API_URL);
+  console.log('ENVs', process.env);
 });
 </script>
