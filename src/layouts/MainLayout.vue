@@ -2,16 +2,8 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
         <q-toolbar-title> Quasar App </q-toolbar-title>
-        <LanguageDropdown />
       </q-toolbar>
     </q-header>
 
@@ -23,8 +15,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-
-import LanguageDropdown from 'src/modules/common/components/LanguageDropdown.vue';
 
 const leftDrawerOpen = ref(false);
 
