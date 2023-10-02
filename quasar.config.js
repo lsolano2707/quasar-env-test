@@ -66,7 +66,8 @@ module.exports = configure(function (/* ctx */) {
       // analyze: true,
       // env: require('dotenv').config().parsed,
       env: {
-        ENVIRONMENT: process.env.ENVIRONMENT,
+        ...require('dotenv').config().parsed,
+        // ENVIRONMENT: process.env.ENVIRONMENT,
         API_URL: process.env.API_URL,
       },
       // rawDefine: {}
