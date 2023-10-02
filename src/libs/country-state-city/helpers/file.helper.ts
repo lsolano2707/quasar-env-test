@@ -7,7 +7,7 @@ export async function readJsonFile(path: string) {
 
     return file.default;
   } catch (error) {
-    console.log('ERRORRR', error);
+    console.log('ERRORRR 2', error);
 
   }
 }
