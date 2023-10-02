@@ -1,6 +1,6 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <h1>ENV TEST - QUASAR</h1>
+    <h1>ENV TEST - QUASAR 1</h1>
     <!-- <div class="col-auto q-mr-sm">
       <q-btn
         color="primary"
