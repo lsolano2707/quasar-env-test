@@ -6,8 +6,8 @@ export interface State {
   countryName: string;
   stateCode: string;
   type: string | null;
-  latitude: string;
-  longitude: string;
+  latitude: string | null;
+  longitude: string | null;
 }
 
 export interface StateLite {

@@ -10,11 +10,11 @@ export interface Country {
   currencyName: string;
   currencySymbol: string;
   tld: string;
-  native: string;
+  native: string | null;
   region: string;
-  region_id: string;
+  regionId: string | null;
   subregion: string;
-  subregion_id: string;
+  subregionId: string | null;
   nationality: string;
   timezones: {
     zoneName: string;
@@ -22,9 +22,9 @@ export interface Country {
     gmtOffsetName: string;
     abbreviation: string;
     tzName: string;
-  }[];
+  }[] | null;
   translations: {
-    [key: string]: string;
+    [key: string]: string | undefined;
   };
   latitude: string;
   longitude: string;
