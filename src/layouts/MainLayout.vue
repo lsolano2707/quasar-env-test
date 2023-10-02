@@ -3,7 +3,11 @@
     <q-header elevated>
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
-        <q-toolbar-title> Quasar App </q-toolbar-title>
+        <q-toolbar-title>
+          <router-link to="/">
+            <q-icon name="img:/src/assets/images/logo.svg" size="100px" />
+          </router-link>
+        </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
