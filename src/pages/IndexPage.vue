@@ -20,9 +20,9 @@ import CountryStateCity from '../components/CountryStateCity.vue';
 const country = ref();
 
 onMounted(() => {
-  console.log('TEST', process.env.TEST);
-  console.log('ENVIRONMENT', process.env.ENVIRONMENT);
-  console.log('API_URL', process.env.API_URL);
-  console.log('ENVs', process.env);
+  // console.log('TEST', process.env.TEST);
+  // console.log('ENVIRONMENT', process.env.ENVIRONMENT);
+  // console.log('API_URL', process.env.API_URL);
+  // console.log('ENVs', process.env);
 });
 </script>

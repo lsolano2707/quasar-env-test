@@ -46,7 +46,7 @@ watch(
   () => props.countryCode,
   async () => {
     if (props.countryCode && !props.stateCode) {
-      options.value = (await getAllStatesByCountryLite(props.countryCode)).map((el) => ({
+      options.value = (await getAllStatesByCountryLite(props.countryCode))?.map((el) => ({
         value: el.stateCode,
         label: el.name,
       }));
@@ -71,7 +71,7 @@ watch(
 // Lifecycles
 onMounted(async () => {
   if (!props.countryCode && !props.stateCode) {
-    options.value = (await getAllCountriesLite()).map((el) => ({
+    options.value = (await getAllCountriesLite())?.map((el) => ({
       value: el.iso2,
       label: el.name,
       flag: el.iso2?.toLowerCase(),
