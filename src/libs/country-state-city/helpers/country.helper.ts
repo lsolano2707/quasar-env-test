@@ -4,7 +4,7 @@ import { readJsonFile } from '../helpers/file.helper';
 // Types
 import { Country, CountryLite } from '../types/country';
 
-const BASE_PATH = '../data';
+const BASE_PATH = 'src/libs/country-state-city/data';
 
 export const getAllCountries = async (): Promise<Country[]> => readJsonFile(`${BASE_PATH}/countries.json`);
 
