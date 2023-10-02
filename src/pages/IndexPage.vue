@@ -1,11 +1,23 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <h1>ENV TEST - QUASAR 2</h1>
+  <q-page class="row q-pa-md">
+    <div class="col-12">
+      <h4>ENV TEST - QUASAR 2</h4>
+    </div>
+    <div class="col-4">
+
+      <CountryStateCity v-model="country" label="label" />
+      <br>
+      country: {{ country }}
+    </div>
   </q-page>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
+
+import CountryStateCity from '../components/CountryStateCity.vue';
+
+const country = ref();
 
 onMounted(() => {
   console.log('TEST', process.env.TEST);

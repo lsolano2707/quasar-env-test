@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 512 512"
+    style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+    <g>
+        <g>
+            <path
+                d="m512 96.768-36.255-14.751c-49.395-20.127-99.258-26.455-139.878-18.706-47.065 9.858-76.282 24.58-98.138 36.416-21.87 11.821-38.232 20.42-65.596 20.229-15.293-.132-32.915-8.32-47.08-14.897-5.566-2.593-10.576-4.893-14.766-6.475l-10.575 28.066.967 162.056c26.47 7.969 58.14 12.803 90.645 12.803 49.995 0 103.968-11.455 142.024-40.62 32.52-27.524 43.315-23.101 69.434-12.451l24.741 10.093-4.277-26.382c-5.229-32.212-14.429-58.022-28.652-80.068 18.604-16.436 48.574-30.557 80.581-42.056z"
+                fill="#f03800" data-original="#f03800" class=""></path>
+            <path d="m105 75h-15v362h15 15v-362z" fill="#f0f7ff" data-original="#f0f7ff"></path>
+            <path d="m105 75h15v362h-15z" fill="#dfe7f4" data-original="#dfe7f4"></path>
+            <circle cx="105" cy="45" fill="#fed843" r="45" data-original="#fed843" class=""></circle>
+            <path d="m150 45c0-24.814-20.186-45-45-45v90c24.814 0 45-20.186 45-45z" fill="#fabe2c"
+                data-original="#fabe2c" class=""></path>
+            <path d="m175.4 452h-25.4v-30h-45-45v30h-25.4l-34.6 60h105 105z" fill="#474f54" data-original="#474f54">
+            </path>
+            <path d="m175.4 452h-25.4v-30h-45v90h105z" fill="#32393f" data-original="#32393f"></path>
+        </g>
+    </g>
+</svg>

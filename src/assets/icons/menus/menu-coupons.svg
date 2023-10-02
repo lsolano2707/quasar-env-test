@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 60 60"
+    style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+    <g>
+        <path fill="#f7c331"
+            d="M8.374 19 39.71 1.508a4 4 0 0 1 5.442 1.543l3.025 5.419a1.968 1.968 0 0 1-.412 2.458A8.006 8.006 0 0 0 45.2 19l-.2 3H8z"
+            data-original="#f7c331" class=""></path>
+        <path fill="#e5354b"
+            d="M51 39a8.005 8.005 0 0 0 6.44 7.85A1.963 1.963 0 0 1 59 48.79V55a4 4 0 0 1-4 4H5a4 4 0 0 1-4-4V23a4 4 0 0 1 4-4h50a4 4 0 0 1 4 4v6.21a1.963 1.963 0 0 1-1.56 1.94A8.005 8.005 0 0 0 51 39z"
+            data-original="#e5354b" class=""></path>
+        <g fill="#c12748">
+            <path
+                d="M44 56v3h-2v-3a1 1 0 0 1 2 0zM43 49a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zM43 43a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zM43 37a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zM43 31a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zM43 25a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zM44 19v3a1 1 0 0 1-2 0v-3z"
+                fill="#c12748" data-original="#c12748" class=""></path>
+        </g>
+        <path fill="#ffffff"
+            d="M12 52a1 1 0 0 1-.707-1.707l22-22a1 1 0 0 1 1.414 1.414l-22 22A1 1 0 0 1 12 52zM16 38a5 5 0 1 1 5-5 5.006 5.006 0 0 1-5 5zm0-8a3 3 0 1 0 3 3 3 3 0 0 0-3-3zM30 52a5 5 0 1 1 5-5 5.006 5.006 0 0 1-5 5zm0-8a3 3 0 1 0 3 3 3 3 0 0 0-3-3z"
+            data-original="#ffffff"></path>
+    </g>
+</svg>
